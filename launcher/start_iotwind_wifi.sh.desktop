@@ -2,7 +2,7 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Terminal=false
+Terminal=true
 Icon[de_DE]=gnome-panel-launcher
 Name[de_DE]=start_iotwind_wifi.sh
 Exec=/home/iotwind/anemometer3d/start_iotwind_wifi.sh
