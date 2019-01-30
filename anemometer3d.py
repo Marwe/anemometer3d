@@ -1,7 +1,41 @@
 #!/usr/bin/env python3
 
-# TODO: convert values to float, if applicable, do it on knowledge about expected type, e.g. according to header name (e.g. WGA -> float, measurement_unit -> str, unknown: str?)
-# TODO: create lib/class for processing thies messages
+# This file is part of anemometer3d
+
+# anemometer3d is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# anemometer3d is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with anemometer3d.  If not, see <http://www.gnu.org/licenses/>.
+
+# Diese Datei ist Teil von anemometer3d.
+
+# anemometer3d ist Freie Software: Sie können es unter den Bedingungen
+# der GNU General Public License, wie von der Free Software Foundation,
+# Version 3 der Lizenz oder (nach Ihrer Wahl) jeder neueren
+# veröffentlichten Version, weiter verteilen und/oder modifizieren.
+
+# anemometer3d wird in der Hoffnung, dass es nützlich sein wird, aber
+# OHNE JEDE GEWÄHRLEISTUNG, bereitgestellt; sogar ohne die implizite
+# Gewährleistung der MARKTFÄHIGKEIT oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK.
+# Siehe die GNU General Public License für weitere Details.
+
+# Sie sollten eine Kopie der GNU General Public License zusammen mit diesem
+# Programm erhalten haben. Wenn nicht, siehe <https://www.gnu.org/licenses/>.
+
+# Copyright (c) 2019 Martin Weis
+
+""" 
+This module helps to handle messages of Thies Anemometer 3D measurements.
+Currently, only the pre-defined message types are implemented.
+"""
 
 import pynmea2
 import string
@@ -17,10 +51,12 @@ def addlogger(cls: type):
 
 @addlogger
 class anemometer3d():
-    """Anemometer3D class to handle Thies (https://www.thiesclima.com/) "Ultraschall Anemometer 3D" wind measurement devices via (serial) messages.
+    """Anemometer3D class to handle Thies (https://www.thiesclima.com/) 
+    "Ultraschall Anemometer 3D" wind measurement devices via (serial) messages.
     Serial messaging has to be implemented elsewhere, 
     this class just helps to create querys and parse the resulting messages.
-    The serial telegram query is based on <devicenumber>TR<messagetype>
+    The serial telegram query is based on <devicenumber>TR<messagetype>, so only predefined 
+    telegrams are handled
     @devicenumber: ID of the device to query
     @messagetype: message type to query and parse, see telegram type definitions in documentation
     """
