@@ -4,10 +4,10 @@
 This software can be used to get measurements from Anemometer 3D devices (https://www.thiesclima.com/de/Produkte/Wind-Ultraschall-Anemometer/) into IoT-typical environment.
 
 The connection to the devices is currently via Serial2Wifi, such that the serial protocol messages can be used over TCP.
-
 `read_wind.py` is a program to handle the communication, it can use MQTT and InfluxDB as services to send the data to.
+To easily setup such services locally have a look at the docker-compose repository named [iotwind-dckr](https://github.com/Marwe/iotwind-dckr).
+Since for this setup all ports are shifted by 20000, these are the defaults for the program, too (MQTT via localhost:21883 instead of default port 1883, Influxdb via localhost:28086 instead of default port 8086)
 
-To easily setup such services locally have a look at the docker-compose repository named iotwind-dckr.
 
 ## Usage
 
