@@ -9,6 +9,15 @@ To easily setup such services locally have a look at the docker-compose reposito
 Since for this setup all ports are shifted by 20000, these are the defaults for the program, too (MQTT via localhost:21883 instead of default port 1883, Influxdb via localhost:28086 instead of default port 8086)
 
 
+## start scripts to Desktop on ubuntu/gnome3
+
+create functional start icons with `gnome-desktop-item-edit` from package `gnome-panel` (Ubuntu 16.04):
+	
+    gnome-desktop-item-edit --create-new ~/Schreibtisch/
+
+That is the german name for the ~/Desktop location
+
+
 ## Usage
 
 ~~~
