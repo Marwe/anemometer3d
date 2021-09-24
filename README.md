@@ -56,4 +56,15 @@ optional arguments:
                         pause between reads in seconds
 ~~~
 
+# install and run
+
+sudo apt install virtualenvwrapper 
+mkvirtualenv -p $(which python3) iotwind
+#pip3 install influxdb
+#pip3 install paho-mqtt
+#pip3 install pynmea2
+pip3 -r requirements.txt
+
+# example start script
+./start_iotwind_cable.sh
 
