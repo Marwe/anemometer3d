@@ -3,7 +3,7 @@
 
 cmpg=""
 
-read -t 10 -p "campaign name (10 sec. timeout): " cname
+read -t 60 -p "campaign name (10 sec. timeout): " cname
 if [ -n "$cname" ] ; then
     cmpg="-C \"$cname\""
 fi
