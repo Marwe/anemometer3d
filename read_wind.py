@@ -166,7 +166,7 @@ while True:
             answer=s.makefile('rb').readline()
             maxtries-=1
             if 0 > maxtries:
-                logging.error('empty response, continuing, failed query: '+cleanchars(query))
+                logging.error('empty response, continuing, failed query: '+a3d.cleanchars(query))
                 continue
         logging.debug("answer (cleaned):"+a3d.cleanchars(answer.decode('ascii')))
         #t=time.ctime()
